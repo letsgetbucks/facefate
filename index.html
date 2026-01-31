@@ -3,25 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-1675219092911775">
     <title>AI 관상 사주 - 운명의 얼굴</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
-        body { font-family: 'Pretendard', sans-serif; background-color: #fdfbf7; }
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-        .upload-zone:hover { border-color: #6366f1; background-color: #f5f3ff; }
-    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1675219092911775"
+     crossorigin="anonymous"></script>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen p-4">
 
-    <header class="text-center mb-10">
-        <div class="inline-block px-4 py-1 mb-3 text-sm font-semibold text-indigo-600 bg-indigo-100 rounded-full">
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 w-full">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600" data-i18n-key="nav_brand">AI 관상</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-indigo-600 font-semibold" data-i18n-key="nav_home">홈</a>
+                <a href="blog" class="text-gray-600 hover:text-indigo-600 transition" data-i18n-key="nav_blog">블로그</a>
+                <a href="about.html" class="text-gray-600 hover:text-indigo-600 transition" data-i18n-key="nav_about">소개</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition" data-i18n-key="nav_contact">문의하기</a>
+                <a href="privacy.html" class="text-gray-600 hover:text-indigo-600 transition" data-i18n-key="nav_privacy">개인정보보호정책</a>
+                <a href="terms.html" class="text-gray-600 hover:text-indigo-600 transition" data-i18n-key="nav_terms">이용약관</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <select id="language-selector" class="bg-white border border-gray-200 rounded-md py-1 px-2 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option value="ko">🇰🇷 한국어</option>
+                    <option value="en">🇺🇸 English</option>
+                </select>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-indigo-600 font-semibold" data-i18n-key="nav_home_mobile">홈</a>
+            <a href="blog" class="block py-2 text-gray-600 hover:text-indigo-600" data-i18n-key="nav_blog_mobile">블로그</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-indigo-600" data-i18n-key="nav_about_mobile">소개</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-indigo-600" data-i18n-key="nav_contact_mobile">문의하기</a>
+            <a href="privacy.html" class="block py-2 text-gray-600 hover:text-indigo-600" data-i18n-key="nav_privacy_mobile">개인정보보호정책</a>
+            <a href="terms.html" class="block py-2 text-gray-600 hover:text-indigo-600" data-i18n-key="nav_terms_mobile">이용약관</a>
+        </div>
+    </header>
+    
+    <div class="text-center my-10">
+        <div class="inline-block px-4 py-1 mb-3 text-sm font-semibold text-indigo-600 bg-indigo-100 rounded-full" data-i18n-key="tagline">
             AI Fortune Teller
         </div>
-        <h1 class="text-4xl font-extrabold text-gray-800">나의 사진으로 보는 <span class="text-indigo-600">사주 관상</span></h1>
-        <p class="mt-2 text-gray-500 text-lg">사진 한 장으로 당신의 타고난 기운을 분석합니다.</p>
-    </header>
+        <h1 class="text-4xl font-extrabold text-gray-800" data-i18n-key="title">나의 사진으로 보는 <span class="text-indigo-600">사주 관상</span></h1>
+        <p class="mt-2 text-gray-500 text-lg" data-i18n-key="subtitle">사진 한 장으로 당신의 타고난 기운을 분석합니다.</p>
+    </div>
+    
+    <!-- Google AdSense Ad Unit 1 (Below Header) -->
+    <div class="my-5 text-center">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-1675219092911775"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
     <main class="w-full max-w-md bg-white rounded-[2.5rem] shadow-xl shadow-gray-200/50 p-8 border border-gray-100">
         
@@ -30,19 +73,19 @@
                 <input type="file" id="file-input" class="absolute inset-0 opacity-0 cursor-pointer" accept="image/*">
                 <div class="space-y-4">
                     <div class="text-5xl group-hover:scale-110 transition-transform">📸</div>
-                    <div class="text-gray-600 font-medium">이곳을 클릭하거나<br>사진을 끌어다 놓으세요</div>
-                    <div class="text-xs text-gray-400 font-light">얼굴이 잘 나온 사진일수록 정확합니다.</div>
+                    <div class="text-gray-600 font-medium" data-i18n-key="upload_prompt">이곳을 클릭하거나<br>사진을 끌어다 놓으세요</div>
+                    <div class="text-xs text-gray-400 font-light" data-i18n-key="upload_tip">얼굴이 잘 나온 사진일수록 정확합니다.</div>
                 </div>
             </div>
             
-            <button id="analyze-btn" class="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:bg-gray-300 disabled:shadow-none" disabled>
+            <button id="analyze-btn" class="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:bg-gray-300 disabled:shadow-none" disabled data-i18n-key="analyze_button">
                 분석 시작하기
             </button>
         </div>
 
         <div id="loading-section" class="hidden flex flex-col items-center py-10 space-y-4">
             <div class="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
-            <p class="text-indigo-600 font-medium animate-pulse">우주의 기운을 읽는 중...</p>
+            <p class="text-indigo-600 font-medium animate-pulse" data-i18n-key="loading_text">우주의 기운을 읽는 중...</p>
         </div>
 
         <div id="result-section" class="hidden space-y-6 animate-fade-in">
@@ -50,22 +93,54 @@
                 <img id="image-preview" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-50 shadow-md">
             </div>
             <div class="bg-indigo-50 rounded-2xl p-5 text-center">
-                <h3 class="text-sm text-indigo-500 font-bold mb-1">오늘의 분석 결과</h3>
-                <p id="saju-result" class="text-gray-800 leading-relaxed font-medium">
+                <h3 class="text-sm text-indigo-500 font-bold mb-1" data-i18n-key="result_title">오늘의 분석 결과</h3>
+                <p id="saju-result" class="text-gray-800 leading-relaxed font-medium" data-i18n-key="result_text">
                     "당신의 관상에는 강한 '금(金)'의 기운이 느껴집니다. 추진력이 뛰어나며 2026년에는 큰 재물운이 따를 얼굴이군요!"
                 </p>
             </div>
-            <button onclick="location.reload()" class="w-full py-3 text-gray-500 font-medium hover:text-indigo-600 transition-colors">
+            <button onclick="location.reload()" class="w-full py-3 text-gray-500 font-medium hover:text-indigo-600 transition-colors" data-i18n-key="retry_button">
                 다시 테스트하기
             </button>
         </div>
     </main>
 
-    <footer class="mt-8 text-gray-400 text-sm">
-        &copy; 2026 Saju Studio. All rights reserved.
+    <section class="w-full max-w-4xl mx-auto mt-12 px-6">
+        <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-i18n-key="home_content_title_1">AI 관상은 어떻게 작동하나요?</h2>
+            <div class="text-gray-700 leading-relaxed space-y-4">
+                <p data-i18n-key="home_content_p_1">저희의 AI 관상 분석기는 단순한 재미를 넘어, 수천 년간 축적된 동양의 관상학 데이터를 최신 인공지능 기술로 학습시킨 결과물입니다. 사용자가 사진을 업로드하면, AI는 눈, 코, 입, 이마, 턱선 등 얼굴의 주요 특징과 그 비율을 정밀하게 측정하고 분석합니다. 이 데이터는 AI가 학습한 수백만 개의 관상 데이터와 비교 분석되어, 사용자의 타고난 기질, 성향, 그리고 운의 흐름에 대한 통계적인 해석을 제공합니다.</p>
+                <p data-i18n-key="home_content_p_2">이 과정은 전적으로 자동화되어 있으며, 업로드된 사진은 분석이 끝난 후 즉시 파기되므로 개인정보 유출에 대해 안심하셔도 좋습니다. 저희는 기술을 통해 자신을 더 깊이 이해하고, 삶의 새로운 가능성을 발견하는 즐거운 경험을 제공하고자 합니다. 더 자세한 내용이 궁금하시다면 저희 <a href="blog" class="text-indigo-600 font-semibold hover:underline">블로그</a>를 방문해주세요.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Google AdSense Ad Unit 2 (Before Footer) -->
+    <div class="my-5 text-center">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-1675219092911775"
+            data-ad-slot="0987654321"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <footer class="bg-white mt-12 w-full">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="mb-4">
+                <a href="about.html" class="px-3 hover:text-indigo-600" data-i18n-key="nav_about_footer">소개</a> |
+                <a href="contact.html" class="px-3 hover:text-indigo-600" data-i18n-key="nav_contact_footer">문의하기</a> |
+                <a href="privacy.html" class="px-3 hover:text-indigo-600" data-i18n-key="nav_privacy_footer">개인정보보호정책</a> |
+                <a href="terms.html" class="px-3 hover:text-indigo-600" data-i18n-key="nav_terms_footer">이용약관</a>
+            </div>
+            <p data-i18n-key="footer_text">&copy; 2026 Saju Studio. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
+        // ---ELEMENT SELECTORS---
         const fileInput = document.getElementById('file-input');
         const dropZone = document.getElementById('drop-zone');
         const analyzeBtn = document.getElementById('analyze-btn');
@@ -73,11 +148,95 @@
         const loadingSection = document.getElementById('loading-section');
         const resultSection = document.getElementById('result-section');
         const imagePreview = document.getElementById('image-preview'); // In result section
+        const languageSelector = document.getElementById('language-selector');
 
+        // ---TRANSLATION DATA & LOGIC---
+        const translations = {
+            ko: {
+                nav_brand: "AI 관상",
+                nav_home: "홈",
+                nav_blog: "블로그",
+                nav_about: "소개",
+                nav_contact: "문의하기",
+                nav_privacy: "개인정보보호정책",
+                nav_terms: "이용약관",
+                nav_home_mobile: "홈",
+                nav_blog_mobile: "블로그",
+                nav_about_mobile: "소개",
+                nav_contact_mobile: "문의하기",
+                nav_privacy_mobile: "개인정보보호정책",
+                nav_terms_mobile: "이용약관",
+                nav_about_footer: "소개",
+                nav_contact_footer: "문의하기",
+                nav_privacy_footer: "개인정보보호정책",
+                nav_terms_footer: "이용약관",
+                tagline: "AI Fortune Teller",
+                title: '나의 사진으로 보는 <span class="text-indigo-600">사주 관상</span>',
+                subtitle: "사진 한 장으로 당신의 타고난 기운을 분석합니다.",
+                upload_prompt: "이곳을 클릭하거나<br>사진을 끌어다 놓으세요",
+                upload_tip: "얼굴이 잘 나온 사진일수록 정확합니다.",
+                analyze_button: "분석 시작하기",
+                loading_text: "우주의 기운을 읽는 중...",
+                result_title: "오늘의 분석 결과",
+                result_text: '"당신의 관상에는 강한 \'금(金)\'의 기운이 느껴집니다. 추진력이 뛰어나며 2026년에는 큰 재물운이 따를 얼굴이군요!"',
+                retry_button: "다시 테스트하기",
+                footer_text: "&copy; 2026 Saju Studio. All rights reserved.",
+                home_content_title_1: "AI 관상은 어떻게 작동하나요?",
+                home_content_p_1: "저희의 AI 관상 분석기는 단순한 재미를 넘어, 수천 년간 축적된 동양의 관상학 데이터를 최신 인공지능 기술로 학습시킨 결과물입니다. 사용자가 사진을 업로드하면, AI는 눈, 코, 입, 이마, 턱선 등 얼굴의 주요 특징과 그 비율을 정밀하게 측정하고 분석합니다. 이 데이터는 AI가 학습한 수백만 개의 관상 데이터와 비교 분석되어, 사용자의 타고난 기질, 성향, 그리고 운의 흐름에 대한 통계적인 해석을 제공합니다.",
+                home_content_p_2: '이 과정은 전적으로 자동화되어 있으며, 업로드된 사진은 분석이 끝난 후 즉시 파기되므로 개인정보 유출에 대해 안심하셔도 좋습니다. 저희는 기술을 통해 자신을 더 깊이 이해하고, 삶의 새로운 가능성을 발견하는 즐거운 경험을 제공하고자 합니다. 더 자세한 내용이 궁금하시다면 저희 <a href="blog" class="text-indigo-600 font-semibold hover:underline">블로그</a>를 방문해주세요.',
+            },
+            en: {
+                nav_brand: "AI Face Reading",
+                nav_home: "Home",
+                nav_blog: "Blog",
+                nav_about: "About",
+                nav_contact: "Contact",
+                nav_privacy: "Privacy Policy",
+                nav_terms: "Terms of Service",
+                nav_home_mobile: "Home",
+                nav_blog_mobile: "Blog",
+                nav_about_mobile: "About",
+                nav_contact_mobile: "Contact",
+                nav_privacy_mobile: "Privacy Policy",
+                nav_terms_mobile: "Terms of Service",
+                nav_about_footer: "About",
+                nav_contact_footer: "Contact",
+                nav_privacy_footer: "Privacy Policy",
+                nav_terms_footer: "Terms of Service",
+                tagline: "AI Fortune Teller",
+                title: 'My <span class="text-indigo-600">Destiny</span> in a Photo',
+                subtitle: "Analyze your innate energy with a single photo.",
+                upload_prompt: "Click here or<br>drag and drop a photo",
+                upload_tip: "The clearer the face, the more accurate the reading.",
+                analyze_button: "Start Analysis",
+                loading_text: "Reading the energy of the universe...",
+                result_title: "Today's Analysis Result",
+                result_text: '"A strong \'Metal (金)\' energy is felt in your features. You have excellent drive and a face destined for great wealth in 2026!"',
+                retry_button: "Test Again",
+                footer_text: "&copy; 2026 Saju Studio. All rights reserved.",
+                home_content_title_1: "How Does AI Face Reading Work?",
+                home_content_p_1: "Our AI Face Reading analyzer is more than just fun; it's the result of training an advanced artificial intelligence with thousands of years of accumulated Eastern face reading data. When you upload a photo, our AI precisely measures and analyzes key facial features like the eyes, nose, mouth, forehead, and jawline, as well as their proportions. This data is then compared against millions of data points the AI has learned from, providing a statistical interpretation of your innate disposition, personality, and the flow of your luck.",
+                home_content_p_2: 'This process is fully automated, and your uploaded photo is destroyed immediately after analysis, so you can rest assured that your personal information is secure. We aim to provide an enjoyable experience of understanding yourself more deeply and discovering new life possibilities through technology. If you want to know more, please visit our <a href="blog" class="text-indigo-600 font-semibold hover:underline">blog</a>.',
+            }
+        };
+
+        const setLanguage = (lang) => {
+            localStorage.setItem('language', lang);
+            languageSelector.value = lang;
+            document.querySelectorAll('[data-i18n-key]').forEach(element => {
+                const key = element.getAttribute('data-i18n-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        };
+
+        languageSelector.addEventListener('change', (e) => setLanguage(e.target.value));
+
+        // ---FILE UPLOAD & PREVIEW LOGIC---
         function showPreview(file) {
             analyzeBtn.disabled = false;
             analyzeBtn.classList.add('animate-bounce');
-
             const reader = new FileReader();
             reader.onload = (e) => {
                 dropZone.innerHTML = ''; // Clear drop-zone content
@@ -85,72 +244,75 @@
                 preview.src = e.target.result;
                 preview.className = 'w-full h-48 object-cover rounded-2xl shadow-lg';
                 dropZone.appendChild(preview);
-                
-                // Disable further uploads until reset
                 dropZone.style.cursor = 'default';
-                fileInput.disabled = true; 
+                fileInput.disabled = true;
             };
             reader.readAsDataURL(file);
         }
 
-        // Drag and Drop listeners
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            if (fileInput.disabled) return;
-            dropZone.classList.add('border-indigo-600', 'bg-indigo-50');
-        });
+        if (dropZone) {
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                if (fileInput.disabled) return;
+                dropZone.classList.add('border-indigo-600', 'bg-indigo-50');
+            });
 
-        dropZone.addEventListener('dragleave', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
-        });
+            dropZone.addEventListener('dragleave', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
+            });
 
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            if (fileInput.disabled) return;
-            dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
-            if (e.dataTransfer.files.length > 0) {
-                fileInput.files = e.dataTransfer.files;
-                const event = new Event('change', { bubbles: true });
-                fileInput.dispatchEvent(event);
-            }
-        });
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                if (fileInput.disabled) return;
+                dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
+                if (e.dataTransfer.files.length > 0) {
+                    fileInput.files = e.dataTransfer.files;
+                    const event = new Event('change', { bubbles: true });
+                    fileInput.dispatchEvent(event);
+                }
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    showPreview(e.target.files[0]);
+                }
+            });
 
-        // Handle file selection from either click or drop
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                showPreview(e.target.files[0]);
-            }
-        });
+            analyzeBtn.addEventListener('click', () => {
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    alert("먼저 사진을 업로드해주세요.");
+                    return;
+                }
+                uploadContainer.classList.add('hidden');
+                loadingSection.classList.remove('hidden');
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = (e) => { imagePreview.src = e.target.result; };
+                reader.readAsDataURL(file);
+                setTimeout(() => {
+                    loadingSection.classList.add('hidden');
+                    resultSection.classList.remove('hidden');
+                }, 2500);
+            });
 
-        // Analyze button click handler
-        analyzeBtn.addEventListener('click', () => {
-            if (!fileInput.files || fileInput.files.length === 0) {
-                alert("먼저 사진을 업로드해주세요.");
-                return;
-            }
+            dropZone.addEventListener('click', () => {
+                if (!fileInput.disabled) {
+                    fileInput.click();
+                }
+            });
+        }
+        
+        // ---INITIALIZATION---
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialLang = localStorage.getItem('language') || (navigator.language.startsWith('ko') ? 'ko' : 'en');
+            setLanguage(initialLang);
 
-            uploadContainer.classList.add('hidden');
-            loadingSection.classList.remove('hidden');
-
-            // Set up image preview in the separate result section
-            const file = fileInput.files[0];
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                imagePreview.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-
-            // Simulate analysis and show result
-            setTimeout(() => {
-                loadingSection.classList.add('hidden');
-                resultSection.classList.remove('hidden');
-            }, 2500);
-        });
-
-        dropZone.addEventListener('click', () => {
-            if (!fileInput.disabled) {
-                fileInput.click();
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                });
             }
         });
     </script>

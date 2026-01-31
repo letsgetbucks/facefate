@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI 관상 사주</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #fdfbf7; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">AI 관상</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition">홈</a>
+                <a href="blog" class="text-gray-600 hover:text-indigo-600 transition">블로그</a>
+                <a href="about.html" class="text-indigo-600 font-semibold">소개</a>
+                <a href="contact.html" class="text-gray-600 hover:text-indigo-600 transition">문의하기</a>
+                <a href="privacy.html" class="text-gray-600 hover:text-indigo-600 transition">개인정보보호정책</a>
+                <a href="terms.html" class="text-gray-600 hover:text-indigo-600 transition">이용약관</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-indigo-600">홈</a>
+            <a href="blog" class="block py-2 text-gray-600 hover:text-indigo-600">블로그</a>
+            <a href="about.html" class="block py-2 text-indigo-600 font-semibold">소개</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-indigo-600">문의하기</a>
+            <a href="privacy.html" class="block py-2 text-gray-600 hover:text-indigo-600">개인정보보호정책</a>
+            <a href="terms.html" class="block py-2 text-gray-600 hover:text-indigo-600">이용약관</a>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-6">우리에 대해</h1>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>AI 관상 사주에 오신 것을 환영합니다. 저희는 최첨단 인공지능 기술과 동양의 오랜 지혜인 관상학을 결합하여 사용자들에게 새롭고 흥미로운 자기 이해의 도구를 제공합니다.</p>
+                <p>사용자의 얼굴 사진 한 장만으로, 저희 AI는 얼굴의 각 특징을 정밀하게 분석하여 타고난 기운, 성격, 그리고 미래의 운세 흐름에 대한 깊이 있는 통찰을 제공합니다. 이는 단순한 재미를 넘어, 자신을 더 잘 이해하고 잠재력을 발견하는 데 도움을 줄 수 있습니다.</p>
+                <h2 class="text-2xl font-bold text-gray-800 pt-6">우리의 미션</h2>
+                <p>저희의 미션은 기술을 통해 사람들이 자신의 삶을 더 긍정적으로 바라보고, 자신감을 얻으며, 더 나은 미래를 설계할 수 있도록 돕는 것입니다. 관상학이라는 전통적인 지혜를 현대적인 기술로 재해석하여 누구나 쉽고 재미있게 접근할 수 있도록 만들었습니다.</p>
+                <p>저희는 사용자의 개인정보를 매우 중요하게 생각하며, 업로드된 사진은 분석 즉시 파기되어 어떠한 서버에도 저장되지 않으므로 안심하고 사용하실 수 있습니다.</p>
+                <p>AI 관상 사주와 함께 당신의 얼굴에 숨겨진 놀라운 비밀을 발견해보세요.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white mt-12">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="mb-4">
+                <a href="about.html" class="px-3 hover:text-indigo-600">소개</a> |
+                <a href="contact.html" class="px-3 hover:text-indigo-600">문의하기</a> |
+                <a href="privacy.html" class="px-3 hover:text-indigo-600">개인정보보호정책</a> |
+                <a href="terms.html" class="px-3 hover:text-indigo-600">이용약관</a>
+            </div>
+            <p>&copy; 2026 Saju Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AI 관상 사주</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #fdfbf7; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">AI 관상</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition">홈</a>
+                <a href="blog" class="text-gray-600 hover:text-indigo-600 transition">블로그</a>
+                <a href="about.html" class="text-gray-600 hover:text-indigo-600 transition">소개</a>
+                <a href="contact.html" class="text-indigo-600 font-semibold">문의하기</a>
+                <a href="privacy.html" class="text-gray-600 hover:text-indigo-600 transition">개인정보보호정책</a>
+                <a href="terms.html" class="text-gray-600 hover:text-indigo-600 transition">이용약관</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-gray-600 hover:text-indigo-600">홈</a>
+            <a href="blog" class="block py-2 text-gray-600 hover:text-indigo-600">블로그</a>
+            <a href="about.html" class="block py-2 text-gray-600 hover:text-indigo-600">소개</a>
+            <a href="contact.html" class="block py-2 text-indigo-600 font-semibold">문의하기</a>
+            <a href="privacy.html" class="block py-2 text-gray-600 hover:text-indigo-600">개인정보보호정책</a>
+            <a href="terms.html" class="block py-2 text-gray-600 hover:text-indigo-600">이용약관</a>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 max-w-2xl mx-auto">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-6">문의하기</h1>
+            <p class="text-gray-700 leading-relaxed mb-8">AI 관상 사주에 대한 질문, 파트너십 제안, 또는 기타 문의사항이 있으시면 아래 연락처로 언제든지 연락 주시기 바랍니다. 저희 팀이 신속하게 답변해 드리겠습니다.</p>
+            
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-envelope fa-lg text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">이메일</h2>
+                        <p class="text-gray-600">일반 문의 및 기술 지원</p>
+                        <a href="mailto:contact@sajustudio.ai" class="text-indigo-600 hover:underline">contact@sajustudio.ai</a>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-handshake fa-lg text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">비즈니스 및 파트너십</h2>
+                        <p class="text-gray-600">협업 및 투자 관련 문의</p>
+                        <a href="mailto:business@sajustudio.ai" class="text-indigo-600 hover:underline">business@sajustudio.ai</a>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt fa-lg text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">주소</h2>
+                        <p class="text-gray-600">Saju Studio</p>
+                        <p class="text-gray-600">서울특별시 강남구 테헤란로 123, 45층</p>
+                        <p class="text-gray-600">(우편번호: 06123)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white mt-12">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <div class="mb-4">
+                <a href="about.html" class="px-3 hover:text-indigo-600">소개</a> |
+                <a href="contact.html" class="px-3 hover:text-indigo-600">문의하기</a> |
+                <a href="privacy.html" class="px-3 hover:text-indigo-600">개인정보보호정책</a> |
+                <a href="terms.html" class="px-3 hover:text-indigo-600">이용약관</a>
+            </div>
+            <p>&copy; 2026 Saju Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
