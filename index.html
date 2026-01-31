@@ -1,14 +1,104 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 관상 사주 - 운명의 얼굴</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #fdfbf7; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .upload-zone:hover { border-color: #6366f1; background-color: #f5f3ff; }
+    </style>
 </head>
-<body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+
+    <header class="text-center mb-10">
+        <div class="inline-block px-4 py-1 mb-3 text-sm font-semibold text-indigo-600 bg-indigo-100 rounded-full">
+            AI Fortune Teller
+        </div>
+        <h1 class="text-4xl font-extrabold text-gray-800">나의 사진으로 보는 <span class="text-indigo-600">사주 관상</span></h1>
+        <p class="mt-2 text-gray-500 text-lg">사진 한 장으로 당신의 타고난 기운을 분석합니다.</p>
+    </header>
+
+    <main class="w-full max-w-md bg-white rounded-[2.5rem] shadow-xl shadow-gray-200/50 p-8 border border-gray-100">
+        
+        <div id="upload-container" class="space-y-6">
+            <div id="drop-zone" class="upload-zone relative border-2 border-dashed border-gray-200 rounded-3xl p-10 text-center transition-all cursor-pointer group">
+                <input type="file" id="file-input" class="absolute inset-0 opacity-0 cursor-pointer" accept="image/*">
+                <div class="space-y-4">
+                    <div class="text-5xl group-hover:scale-110 transition-transform">📸</div>
+                    <div class="text-gray-600 font-medium">이곳을 클릭하거나<br>사진을 끌어다 놓으세요</div>
+                    <div class="text-xs text-gray-400 font-light">얼굴이 잘 나온 사진일수록 정확합니다.</div>
+                </div>
+            </div>
+            
+            <button id="analyze-btn" class="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:bg-gray-300 disabled:shadow-none" disabled>
+                분석 시작하기
+            </button>
+        </div>
+
+        <div id="loading-section" class="hidden flex flex-col items-center py-10 space-y-4">
+            <div class="w-12 h-12 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+            <p class="text-indigo-600 font-medium animate-pulse">우주의 기운을 읽는 중...</p>
+        </div>
+
+        <div id="result-section" class="hidden space-y-6 animate-fade-in">
+            <div id="preview-container" class="flex justify-center">
+                <img id="image-preview" class="w-32 h-32 rounded-full object-cover border-4 border-indigo-50 shadow-md">
+            </div>
+            <div class="bg-indigo-50 rounded-2xl p-5 text-center">
+                <h3 class="text-sm text-indigo-500 font-bold mb-1">오늘의 분석 결과</h3>
+                <p id="saju-result" class="text-gray-800 leading-relaxed font-medium">
+                    "당신의 관상에는 강한 '금(金)'의 기운이 느껴집니다. 추진력이 뛰어나며 2026년에는 큰 재물운이 따를 얼굴이군요!"
+                </p>
+            </div>
+            <button onclick="location.reload()" class="w-full py-3 text-gray-500 font-medium hover:text-indigo-600 transition-colors">
+                다시 테스트하기
+            </button>
+        </div>
+    </main>
+
+    <footer class="mt-8 text-gray-400 text-sm">
+        &copy; 2026 Saju Studio. All rights reserved.
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const uploadContainer = document.getElementById('upload-container');
+        const loadingSection = document.getElementById('loading-section');
+        const resultSection = document.getElementById('result-section');
+        const imagePreview = document.getElementById('image-preview');
+
+        // 파일 선택 시 처리
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                analyzeBtn.disabled = false;
+                analyzeBtn.classList.add('animate-bounce');
+            }
+        });
+
+        // 분석 버튼 클릭 시 (Firebase Storage 업로드 로직이 들어갈 곳)
+        analyzeBtn.addEventListener('click', () => {
+            uploadContainer.classList.add('hidden');
+            loadingSection.classList.remove('hidden');
+
+            // 이미지 미리보기 설정
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = (e) => imagePreview.src = e.target.result;
+            reader.readAsDataURL(file);
+
+            // 실제로는 여기서 Firebase Storage 업로드 및 Cloud Functions 호출
+            // 임시 시뮬레이션 (2초 후 결과 노출)
+            setTimeout(() => {
+                loadingSection.classList.add('hidden');
+                resultSection.classList.remove('hidden');
+            }, 2500);
+        });
+    </script>
 </body>
 </html>
