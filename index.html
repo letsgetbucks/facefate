@@ -67,37 +67,91 @@
 
     <script>
         const fileInput = document.getElementById('file-input');
+        const dropZone = document.getElementById('drop-zone');
         const analyzeBtn = document.getElementById('analyze-btn');
         const uploadContainer = document.getElementById('upload-container');
         const loadingSection = document.getElementById('loading-section');
         const resultSection = document.getElementById('result-section');
-        const imagePreview = document.getElementById('image-preview');
+        const imagePreview = document.getElementById('image-preview'); // In result section
 
-        // 파일 선택 시 처리
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                analyzeBtn.disabled = false;
-                analyzeBtn.classList.add('animate-bounce');
+        function showPreview(file) {
+            analyzeBtn.disabled = false;
+            analyzeBtn.classList.add('animate-bounce');
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                dropZone.innerHTML = ''; // Clear drop-zone content
+                const preview = document.createElement('img');
+                preview.src = e.target.result;
+                preview.className = 'w-full h-48 object-cover rounded-2xl shadow-lg';
+                dropZone.appendChild(preview);
+                
+                // Disable further uploads until reset
+                dropZone.style.cursor = 'default';
+                fileInput.disabled = true; 
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Drag and Drop listeners
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            if (fileInput.disabled) return;
+            dropZone.classList.add('border-indigo-600', 'bg-indigo-50');
+        });
+
+        dropZone.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (fileInput.disabled) return;
+            dropZone.classList.remove('border-indigo-600', 'bg-indigo-50');
+            if (e.dataTransfer.files.length > 0) {
+                fileInput.files = e.dataTransfer.files;
+                const event = new Event('change', { bubbles: true });
+                fileInput.dispatchEvent(event);
             }
         });
 
-        // 분석 버튼 클릭 시 (Firebase Storage 업로드 로직이 들어갈 곳)
+        // Handle file selection from either click or drop
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                showPreview(e.target.files[0]);
+            }
+        });
+
+        // Analyze button click handler
         analyzeBtn.addEventListener('click', () => {
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert("먼저 사진을 업로드해주세요.");
+                return;
+            }
+
             uploadContainer.classList.add('hidden');
             loadingSection.classList.remove('hidden');
 
-            // 이미지 미리보기 설정
+            // Set up image preview in the separate result section
             const file = fileInput.files[0];
             const reader = new FileReader();
-            reader.onload = (e) => imagePreview.src = e.target.result;
+            reader.onload = (e) => {
+                imagePreview.src = e.target.result;
+            };
             reader.readAsDataURL(file);
 
-            // 실제로는 여기서 Firebase Storage 업로드 및 Cloud Functions 호출
-            // 임시 시뮬레이션 (2초 후 결과 노출)
+            // Simulate analysis and show result
             setTimeout(() => {
                 loadingSection.classList.add('hidden');
                 resultSection.classList.remove('hidden');
             }, 2500);
+        });
+
+        dropZone.addEventListener('click', () => {
+            if (!fileInput.disabled) {
+                fileInput.click();
+            }
         });
     </script>
 </body>
